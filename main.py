@@ -21,6 +21,6 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     cars.spawn_car()
-    cars.move_cars(score.score)
+    cars.move_cars(score, tim, screen)
     tim.check_for_win(score)
     screen.update()
