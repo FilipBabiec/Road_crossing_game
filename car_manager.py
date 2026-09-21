@@ -12,13 +12,17 @@ class CarManager():
 
 
     def spawn_car(self):
-        car = Turtle("turtle")
-        car.color(random.choice(COLORS))
-        car.penup()
-        car.setheading(270)
-        car.goto(320, random.randint(-270, 270))
-        self.carlist.append(car)
+        if random.randint(1,10) == 1:
+            car = Turtle("turtle")
+            car.color(random.choice(COLORS))
+            car.penup()
+            car.setheading(180)
+            car.goto(320, random.randint(-270, 270))
+            self.carlist.append(car)
 
     def move_cars(self, level):
         for car in self.carlist:
             car.forward(STARTING_MOVE_DISTANCE + level * MOVE_INCREMENT)
+            if car.xcor() == -320:
+                car.hideturtle()
+                self.carlist.remove(car)
