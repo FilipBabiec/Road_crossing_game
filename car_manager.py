@@ -7,7 +7,7 @@ MOVE_INCREMENT = 10
 
 
 def check_collision(player, car, score, screen):
-    if player.distance(car.xcor(),car.ycor()) < 20:
+    if player.distance(car.xcor(),car.ycor()) < 30:
         score.end_game(screen)
 
 
@@ -18,7 +18,8 @@ class CarManager:
 
     def spawn_car(self):
         if random.randint(1,10) == 1:
-            car = Turtle("turtle")
+            car = Turtle("square")
+            car.shapesize(stretch_wid=1, stretch_len=2)
             car.color(random.choice(COLORS))
             car.penup()
             car.setheading(180)
