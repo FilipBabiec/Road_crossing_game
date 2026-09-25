@@ -1,7 +1,7 @@
 from turtle import Turtle
 from tkinter import messagebox
 
-FONT = ("Courier", 24, "normal")
+FONT = ("Courier", 20, "normal")
 
 
 class Scoreboard(Turtle):
@@ -46,4 +46,4 @@ class Scoreboard(Turtle):
 
     def update_scoreboard(self):
         self.clear()
-        self.write(f"Current level: {self.score}    High score: {self.highscore}", font=("Arial", 20, "normal"))
+        self.write(f"Current level: {self.score}    High score: {self.highscore}", font=FONT)
